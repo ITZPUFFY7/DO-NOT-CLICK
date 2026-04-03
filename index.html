@@ -1,25 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <style>
-            #tungimg {
-                width: 300px;
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-            }
-        </style>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>DO NOT CLICK</title>
 
-    <body>
-        <h1 style="text-align: center; margin-top: 25px; font-family: Roboto;">CORNY GAME</h1>
-        <img src="https://th.bing.com/th/id/OIP.YSkk8X5Z0ZeeaXdRQjDJiQHaEK?w=311&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3" alt="Tung Tung Tung Sahur" id="tungimg">
-        <h2>Here are the games to play</h2>
-        
-        <button></button>
-    </body>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: white;
+        }
+
+        button {
+            font-size: 22px;
+            padding: 15px 30px;
+            cursor: pointer;
+            margin-top: 50px;
+        }
+
+        #jumpscare {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>⚠️ DO NOT CLICK ⚠️</h1>
+
+<button id="dangerButton">DO NOT CLICK</button>
+
+<img id="jumpscare" src="" alt="jumpscare">
+
+<script>
+const images = [
+    "https://tse3.mm.bing.net/th/id/OIP.4TXYxArNbw4Gr82eUUL_bwHaJ6?rs=1&pid=ImgDetMain&o=7&rm=3",
+    "https://www.boredpanda.com/blog/wp-content/uploads/2023/04/644a230e3f5d4_l7ink8py2vta1__700.jpg"
+];
+
+document.getElementById("dangerButton").addEventListener("click", function() {
+    const randomIndex = Math.floor(Math.random() * 2); // 0 or 1
+    const img = document.getElementById("jumpscare");
+
+    img.src = images[randomIndex];
+    img.style.display = "block";
+});
+</script>
+
+</body>
 </html>
